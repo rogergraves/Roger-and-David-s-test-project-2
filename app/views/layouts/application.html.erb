@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title>
+	<title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
-</body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+	      <header>
+	        <% logo = image_tag("devbootcamp_logo.png", alt: "Sample App", class: "brand",  :size => "80x15") %>
+					<%= link_to logo, root_path %>	
+					
+	        <nav class="round">
+	          <ul class="nav">
+	            <li><%= link_to "Home", root_path %></li>
+	            <li><%= link_to "Contact", contact_path %></li>
+	            <li><%= link_to "About", about_path %></li>
+		          <li><%= link_to "Help", help_path %></li>
+	            <li><%= link_to "Kim", kim_page_path %></li>
+	            <li><%= link_to "Sign in", '#' %></li>
+	          </ul>
+	        </nav>
+	      </header> 
+			</div>
+			</div>
+			<div class="container">
+			
+	      <section class="round">
+					<%= yield %>
+				</section>
+		</div>
+		</div>
+	</body>
 </html>

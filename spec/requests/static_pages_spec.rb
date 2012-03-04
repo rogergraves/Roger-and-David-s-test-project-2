@@ -11,8 +11,7 @@ describe "Static Pages" do
 
       it "should have the title 'Home'" do
         visit root_path
-        page.should have_selector('title',
-                          text: "Ruby on Rails Tutorial Sample App | Home")
+        page.should have_selector('title', text: "Ruby on Rails Tutorial Sample App | Home")
       end
     end
 
